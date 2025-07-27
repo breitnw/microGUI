@@ -1,6 +1,6 @@
 # microGUI
 
-µGUI is a single-header, zero-dependency library for very small (often embedded) graphical user interfaces. Its architecture and functionality are heavily inspired by nicbarker's wonderful [Clay](https://github.com/nicbarker/clay/tree/main) library) drawing on Clay's approach to nested declarative layouts. Where they differ is: 
+µGUI is a single-header, zero-dependency library for very small (often embedded) graphical user interfaces. Its architecture and functionality are heavily inspired by nicbarker's wonderful [Clay](https://github.com/nicbarker/clay/tree/main) library, drawing on Clay's approach to nested declarative layouts. Where they differ is: 
 
 - **The set of features offered:** the feature set of µGUI is much more limited than Clay's. This limits expressiveness, but greatly improves compatibility with basic render systems.
 - **The layout types prioritized:** *where Clay is the main menu, µGUI is the HUD.* µGUI does not support scrolling layouts. Instead, layouts are based on tiling and pinned nodes. 
@@ -23,9 +23,8 @@ MG({.flow = MG_FLOW_H}) {
 Unless pinned, a container's children will follow a tiling layout. Depending on the container's `.flow` field, its content can tile horizontally (`MG_FLOW_H`) or vertically (`MG_FLOW_V`)
 
 ### Sizing
-<!--
 TODO
-
+<!--
 MG_SIZING_PX(px: uint32_t)
 MG_SIZING_GROW(proportion: uint32_t)
 MG_SIZING_PERCENT(percent: double)

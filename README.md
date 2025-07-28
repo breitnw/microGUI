@@ -1,16 +1,16 @@
 # microGUI
 
-microGUI (µGUI) is a single-header, zero-dependency library for very small (often embedded) graphical user interfaces. Its architecture and functionality are heavily inspired by nicbarker's wonderful [Clay](https://github.com/nicbarker/clay/tree/main) library, drawing on Clay's approach to nested declarative layouts. The libraries' differences lie in: 
+microGUI (µGUI) is a single-header, zero-dependency library for very small (often embedded) graphical user interfaces. Its architecture and functionality are heavily inspired by nicbarker's wonderful [Clay](https://github.com/nicbarker/clay/tree/main) library, drawing on Clay's nested declarative layout syntax. The libraries' differences lie in: 
 
 - **The layout types prioritized:** *where Clay is the main menu, µGUI is the HUD.* µGUI does not support scrolling layouts. Instead, layouts are based on tiling and pinned nodes. 
 - **The set of features offered:** µGUI's feature set is much smaller than Clay's. This reduces expressiveness, but is critical for compatibility with basic render systems like [Adafruit_GFX](https://github.com/adafruit/Adafruit-GFX-Library).
 
 ``` c
-MG({.flow = MG_FLOW_H}) {
+MG_BOX({.flow = MG_FLOW_H}) {
     MG_PIN({.anchor = MG_ANCHOR_SE, .x = -5, .y = -5}) {
-        MG({.flow = MG_FLOW_V}) {
-            MG_TEXT{"Hello from the top of the pin!"}
-            MG_TEXT{"Hello from the bottom!"}
+        MG_BOX({.flow = MG_FLOW_V}) {
+            MG_TEXT("Hello from the top of the pin!")
+            MG_TEXT("Hello from the bottom!")
         }
     }
 }
